@@ -1,0 +1,45 @@
+# Dependencies
+/node_modules
+/bower_components
+
+# Compiled output
+/dist
+/build
+/out
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Cache
+.cache/
+
+# Testing
+/coverage
+
+# Miscellaneous
+*.bak
+*.zip
+*.tar.gz
