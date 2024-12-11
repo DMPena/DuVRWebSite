@@ -14,10 +14,12 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Robot', sans-serif;
     line-height: 1.6;
     color: var(--secondary-color);
-    background: var(--background-color);
+    /* background: var(--background-color); */
+    /* ... outros estilos do body ... */
+    background: linear-gradient(to bottom, #121212, #00d8ff); /* Gradiente sutil */
     overflow-x: hidden;
 }
 
@@ -74,7 +76,7 @@ nav { /* Added a nav container */
 
 main {
     margin-top: 80px; /* Adjust as needed */
-    padding-bottom: 80px; /*Space for fixed footer if needed*/
+    /* padding-bottom: 80px; Space for fixed footer if needed */
 }
 
 .hero {
@@ -87,7 +89,81 @@ main {
     padding: 2rem;
     position: relative;
     overflow: hidden;
+
+    background-attachment: fixed; 
+    background-size: cover;
+
+    /* ... outros estilos do hero ... */
+    background: linear-gradient(to bottom right), url("./images/vr-background.jpg"); /* Gradiente sobre a imagem de fundo */
+    background-blend-mode: overlay; /* Mistura o gradiente com a imagem */
+
 }
+
+.hero h1 {
+    color: #FF00FF; /* Magenta */
+}
+
+.hero p {
+    color: #00FFFF; /* Cyan */
+    padding: 2rem;
+}
+
+#services {
+    text-align: center; /* Center the entire section */
+}
+
+.box-fiver { 
+    margin: 0 auto; /* Center the iframe */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */ 
+}
+
+.box-fiver iframe {
+    width: 100%; 
+    height: 500px; 
+    border: 0; /* Remove iframe border */
+}
+
+footer {
+    background: #000000;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+footer p{
+    margin-bottom: 1rem; /* espaço entre texto e icons */
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 1rem 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
 /* ... (rest of CSS) ... */
 /* Hero Section ... (rest of the CSS remains the same) */
 /* ... */

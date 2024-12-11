@@ -83,6 +83,13 @@ header {
     border-radius: 5px;
     font-weight: bold;
 }
+.cta-buttons b {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
 .btn-primary {
     background: var(--primary-color);
@@ -90,8 +97,8 @@ header {
 }
 
 .btn-secondary {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Sections */
