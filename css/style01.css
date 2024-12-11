@@ -1,0 +1,187 @@
+/* Brand Colors */
+:root {
+    --primary-color: #00d8ff;
+    --secondary-color: #ffffff;
+    --background-color: #121212;
+    --accent-color: #ff00ff;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Robot', sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    /* background: var(--background-color); */
+    /* ... outros estilos do body ... */
+    background: linear-gradient(to bottom, #121212, #00d8ff); /* Gradiente sutil */
+    overflow-x: hidden;
+}
+
+/* Improved Navigation (Centered) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center; /* Changed to center the nav */
+    align-items: center;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+nav { /* Added a nav container */
+    display: flex;
+    justify-content: space-between; /* Distribute logo and links */
+    align-items: center;
+    width: 100%; /* Take full width of header */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the nav within the header */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* ... (previous CSS) ... */
+
+main {
+    margin-top: 80px; /* Adjust as needed */
+    /* padding-bottom: 80px; Space for fixed footer if needed */
+}
+
+.hero {
+    min-height: 100vh; /* Changed to min-height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    background-attachment: fixed; 
+    background-size: cover;
+
+    /* ... outros estilos do hero ... */
+    background: linear-gradient(to bottom right), url("./images/vr-background.jpg"); /* Gradiente sobre a imagem de fundo */
+    background-blend-mode: overlay; /* Mistura o gradiente com a imagem */
+
+}
+
+.hero h1 {
+    color: #FF00FF; /* Magenta */
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.hero p {
+    color: #00FFFF; /* Cyan */
+    padding: 2rem;
+}
+
+#services {
+    text-align: center; /* Center the entire section */
+}
+
+.box-fiver { 
+    margin: 0 auto; /* Center the iframe */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */ 
+}
+
+.box-fiver iframe {
+    width: 100%; 
+    height: 500px; 
+    border: 0; /* Remove iframe border */
+}
+
+footer {
+    background: #000000;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+footer p{
+    margin-bottom: 1rem; /* espaço entre texto e icons */
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 1rem 1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ... (rest of CSS) ... */
+/* Hero Section ... (rest of the CSS remains the same) */
+/* ... */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack logo and links vertically */
+        align-items: center;
+        text-align: center; /* Center text within the nav */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        margin-top: 1rem; /* Add space between logo and links */
+    }
+    /* ... rest of the media query */
+}
+/* ... rest of the CSS */

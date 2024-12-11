@@ -4,26 +4,20 @@
     --secondary-color: #ffffff;
     --background-color: #121212;
     --accent-color: #ff00ff;
+    --hero-text-color: #00ffff; /* New variable for hero text */
 }
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Base Styles */
 body {
     font-family: 'Robot', sans-serif;
     line-height: 1.6;
     color: var(--secondary-color);
-    /* background: var(--background-color); */
-    /* ... outros estilos do body ... */
-    background: linear-gradient(to bottom, #121212, #00d8ff); /* Gradiente sutil */
-    overflow-x: hidden;
+    background: linear-gradient(to bottom, #121212, #00d8ff);
+    overflow-x: hidden; /* Use with caution */
+    margin: 0; /* Reset margin on body */
 }
 
-/* Improved Navigation (Centered) */
+/* Layout: Header */
 header {
     position: fixed;
     top: 0;
@@ -33,19 +27,19 @@ header {
     backdrop-filter: blur(5px);
     padding: 1rem 2rem;
     display: flex;
-    justify-content: center; /* Changed to center the nav */
+    justify-content: center;
     align-items: center;
     z-index: 100;
     transition: background 0.3s ease;
 }
 
-nav { /* Added a nav container */
+nav {
     display: flex;
-    justify-content: space-between; /* Distribute logo and links */
+    justify-content: space-between;
     align-items: center;
-    width: 100%; /* Take full width of header */
-    max-width: 1200px; /* Set a maximum width */
-    margin: 0 auto; /* Center the nav within the header */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -65,6 +59,7 @@ nav { /* Added a nav container */
     color: var(--secondary-color);
     font-weight: 500;
     transition: color 0.3s, transform 0.2s;
+    padding: 0.5rem 1rem; /* Added padding for better click area */
 }
 
 .nav-links a:hover {
@@ -72,15 +67,14 @@ nav { /* Added a nav container */
     transform: scale(1.1);
 }
 
-/* ... (previous CSS) ... */
-
+/* Layout: Main Content */
 main {
-    margin-top: 80px; /* Adjust as needed */
-    /* padding-bottom: 80px; Space for fixed footer if needed */
+    margin-top: 80px;
 }
 
+/* Components: Hero Section */
 .hero {
-    min-height: 100vh; /* Changed to min-height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,45 +83,82 @@ main {
     padding: 2rem;
     position: relative;
     overflow: hidden;
-
-    background-attachment: fixed; 
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/vr-background.jpg");
+    background-blend-mode: overlay;
     background-size: cover;
-
-    /* ... outros estilos do hero ... */
-    background: linear-gradient(to bottom right), url("./images/vr-background.jpg"); /* Gradiente sobre a imagem de fundo */
-    background-blend-mode: overlay; /* Mistura o gradiente com a imagem */
-
+    background-attachment: fixed;
 }
 
 .hero h1 {
-    color: #FF00FF; /* Magenta */
+    color: var(--accent-color);
+    font-size: 46px;
+    font-weight: bold;
 }
 
 .hero p {
-    color: #00FFFF; /* Cyan */
+    color: var(--hero-text-color);
     padding: 2rem;
 }
 
+/* Components: Services Section */
 #services {
-    text-align: center; /* Center the entire section */
+    text-align: center;
+    padding: 2rem; /* Added padding for spacing */
 }
 
-.box-fiver { 
-    margin: 0 auto; /* Center the iframe */
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; 
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+.box-fiver {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */ 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .box-fiver iframe {
-    width: 100%; 
-    height: 500px; 
-    border: 0; /* Remove iframe border */
+    width: 100%;
+    height: 500px;
+    border: 0;
 }
 
+/* Components: Call to Action Buttons */
+.cta-buttons { /* Added a container for better control */
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 2rem;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* Added transition */
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background: #00a0b3; /* Darker shade on hover */
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Layout: Footer */
 footer {
     background: #000000;
     padding: 2rem 0;
@@ -142,44 +173,27 @@ footer .social-links {
     justify-content: center;
     gap: 1rem;
 }
-footer p{
-    margin-bottom: 1rem; /* espaço entre texto e icons */
-}
 
-.cta-buttons a {
-    text-decoration: none;
-    padding: 1rem 1rem;
-    margin: 0.5rem;
-    border-radius: 5px;
-    font-weight: bold;
+footer p {
+    margin-bottom: 1rem;
 }
-
-.btn-primary {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.btn-secondary {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-/* ... (rest of CSS) ... */
-/* Hero Section ... (rest of the CSS remains the same) */
-/* ... */
 
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack logo and links vertically */
+        flex-direction: column;
         align-items: center;
-        text-align: center; /* Center text within the nav */
+        text-align: center;
     }
 
     .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        margin-top: 1rem; /* Add space between logo and links */
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 1rem; /* Reduced gap on smaller screens */
     }
-    /* ... rest of the media query */
+
+    .cta-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
 }
-/* ... rest of the CSS */
