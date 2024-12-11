@@ -1,6 +1,8 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+// Select necessary elements
+const hamburger = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-links");
 
+// Toggle menu visibility on hamburger click
 hamburger.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
@@ -8,42 +10,31 @@ function toggleMenu() {
     navMenu.classList.toggle("active");
 }
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", closeMenu));
+// Close menu when a nav link is clicked
+document.querySelectorAll(".nav-links a").forEach(link =>
+    link.addEventListener("click", closeMenu)
+);
 
 function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
 
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener("click", function (e) {
         e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1);
+        const targetId = this.getAttribute("href").substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            // Close the menu if it's open
-            closeMenu();
-
             // Smooth scroll to the target element
             targetElement.scrollIntoView({
-                behavior: 'smooth'
+                behavior: "smooth",
             });
         }
-    });
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetID = this.getAttribute('href');
-        const targetElement = document.querySelector(targetID);
-
-        window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: 'smooth' // Enable smooth scrolling
-        });
+        // Close menu after navigation
+        closeMenu();
     });
 });
