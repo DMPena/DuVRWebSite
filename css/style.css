@@ -1,18 +1,18 @@
 /* Brand Colors */
 :root {
-    --primary-color: #00d8ff;
-    --secondary-color: #ffffff;
-    --background-color: #121212;
-    --accent-color: #ff00ff;
-    --hero-text-color: #00ffff;
+    --primary-color: #00d8ff; /* RGB(0, 216, 255)  HSL(189, 100%, 50%)*/
+    --secondary-color: #ffffff;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
+    --background-color: #121212;/* RGB(18, 18, 18)  HSL(0, 0%, 7%)*/
+    --accent-color: #ff00ff;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
+    --hero-text-color: #00ffff;/* RGB(0, 255, 255)  HSL(180, 100%, 50%)*/
 }
 
 /* Base Styles */
 body {
     font-family: 'Robot', sans-serif;
     line-height: 1.6;
-    color: var(--secondary-color);
     background: linear-gradient(to bottom, #121212, #00d8ff);
+    color: var(--secondary-color);
     overflow-x: hidden;
     /* Use with caution */
     margin: 0;
@@ -67,7 +67,8 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 0.9rem;/ font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: color 0.3s ease, background 0.3s ease;
@@ -160,7 +161,6 @@ main {
     font-size: 3rem;
     font-weight: bold;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    /* Add shadow for better contrast */
     margin-bottom: 1rem;
 }
 
@@ -168,9 +168,7 @@ main {
     font-size: 1.2rem;
     line-height: 1.8;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-    /* Subtle shadow for readability */
     max-width: 700px;
-    /* Limit text width for better focus */
     margin: 0 auto;
     padding: 0 1rem;
 }
