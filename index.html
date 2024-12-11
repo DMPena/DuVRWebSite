@@ -11,8 +11,9 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <div class="logo">DuVR</div>
+
             <ul class="nav-links">
+                <li><h3>DuVR</h3></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -24,57 +25,58 @@
             <div class="theme-toggle">🌙</div>
         </nav>
     </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Welcome to DuVR</h1>
+            <p>Crafting immersive virtual worlds and exploring the limits of technology.</p>
+            <div class="cta-buttons">
+                <a href="portfolio.html" class="btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+            </div>
+        </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Welcome to DuVR</h1>
-        <p>Crafting immersive virtual worlds and exploring the limits of technology.</p>
-        <div class="cta-buttons">
-            <a href="portfolio.html" class="btn-primary">View Portfolio</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="hero">
-        <p> Hello, I’m Duarte, a passionate VR developer with experience in Unreal Engine and Unity. <br>
-            Trough my professional experience I've created immersive VR EHS trainings for railways,<br>
-            work at heights, fire safety and chatbots voice interfaces to make VR even more interactive.<br>
-            When I’m not diving into VR, you’ll find me geeking out over the latest tech,<br>
-            exploring AI, playing sports, online poker, or soaking in the beauty of nature.</p>
-            <img src="./images/DUVR.jpg" alt="Duarte in VR Headset" width=30%>
-    </section>
-    <!-- <section id="services" class="services.hero">-->
-    <section id="services" class="services.hero">
-        <h2>Services</h2>
-        <h4> I develop immersive VR experiences in unreal engine and unity,
-            here you can find more: </h4>
-         
-            <a href="https://br.fiverr.com/s/7YQ7jjb">Fiver link</a>
-            <div class="box-fiver">
-                <iframe src="https://br.fiverr.com/s/7YQ7jjb">
-                </iframe>
- 
-            </div> 
-    </section>
+        <!-- About Section -->
+        <section id="about" class="hero">
+            <p> Hello, I’m Duarte, a passionate VR developer with experience in Unreal Engine and Unity. <br>
+                Trough my professional experience I've created immersive VR EHS trainings for railways,<br>
+                work at heights, fire safety and chatbots voice interfaces to make VR even more interactive.<br>
+                When I’m not diving into VR, you’ll find me geeking out over the latest tech,<br>
+                exploring AI, playing sports, online poker, or soaking in the beauty of nature.</p>
+                <img src="./images/DUVR.jpg" alt="Duarte in VR Headset" width=30%>
+        </section>
+        <!-- <section id="services" class="services.hero">-->
+        <section id="services" class="services.hero">
+            <h2>Services</h2>
+            <h4> I develop immersive VR experiences in unreal engine and unity,
+                here you can find more: </h4>
+            
+                <a href="https://br.fiverr.com/s/7YQ7jjb">Fiver link</a>
+                <div class="box-fiver">
+                    <iframe src="https://br.fiverr.com/s/7YQ7jjb">
+                    </iframe>
+    
+                </div> 
+        </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="hero">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <!-- Contact Section -->
+        <section id="contact" class="hero">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -91,5 +93,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/particles.js-master/particles.min.js"></script>
+
 </body>
 </html>
