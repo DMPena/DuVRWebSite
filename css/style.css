@@ -1,5 +1,8 @@
 /* Base Styles */
 body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh;
     font-family: 'Robot', sans-serif;
     line-height: 1.6;
     background: linear-gradient(to bottom, #121212, #00d8ff);
@@ -69,6 +72,7 @@ header {
 /* Layout: Main Content */
 main {
     margin-top: 60px;
+    flex: 1;
     /* Adjust according to the header size */
 }
 
