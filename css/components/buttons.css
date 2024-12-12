@@ -1,0 +1,59 @@
+/* Components: Call to Action Buttons */
+.cta-buttons {
+    /* Added a container for better control */
+    display: flex;
+    justify-content: center;
+    /* Center the buttons */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* General Button Styles */
+.cta-buttons a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    /* border-radius: 5px; */
+    border-radius: 30px;
+    /* Rounded pill-shaped buttons */
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* Add slight spacing for elegance */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+    /* Subtle hover effect */
+}
+
