@@ -5,12 +5,13 @@ body {
     min-height: 100vh;
     font-family: 'Robot', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #121212, #00d8ff);
+    background: linear-gradient(to bottom, #fffefe, #00d8ff);
     color: var(--secondary-color);
     overflow-x: hidden;
     /* Use with caution */
     margin: 0;
     /* Reset margin on body */
+    /* background: linear-gradient(to bottom, #121212, #00d8ff); */
 }
 
 /* Layout: Header */
@@ -19,7 +20,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(5px);
     display: flex;
@@ -33,27 +34,14 @@ header {
 
 /* Logo */
 .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-    display: none;
-    /* Hidden by default on larger screens */
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
 
-.menu-toggle:hover {
-    transform: scale(1.2);
-}
 
 /* Theme Toggle */
 .theme-toggle {
@@ -71,7 +59,7 @@ header {
 
 /* Layout: Main Content */
 main {
-    margin-top: 60px;
+    margin-top: 70px;
     flex: 1;
     /* Adjust according to the header size */
 }
@@ -159,5 +147,37 @@ main {
     width: 100%;
     height: 500px;
     border: 0;
+}
+
+.contact-hero{
+    position: relative;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0rem;
+    overflow: hidden;
+}
+
+.contact-form{
+    display: flex;
+    text-align: left;
+    padding: 1rem;
+}
+
+.form-group{
+    padding: 1rem;
+}
+
+.contact-info{
+    padding: 1rem;
+}
+
+.submit-btn{
+    text-align: right;
+    padding: 0rem 1rem;
+
 }
 

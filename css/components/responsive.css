@@ -1,46 +1,65 @@
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    nav {
-        width: 90%;
-        max-width: 1200px;
+    .navbar {
+
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 1rem;
+        /* width: 90%;
+        max-width: 1200px;
+        
+        
+        padding: 0 1rem; */
         /* Ensure spacing */
     }
 
-    .nav-links {
-        flex-direction: column;
+    .nav-menu {
         position: fixed;
-        top: 60px;
-        /* Below the header */
-        right: -100%;
-        /* Off-screen by default */
-        background: rgba(0, 0, 0, 0.95);
-        width: 100%;
-        height: calc(100vh - 60px);
-        /* Full screen minus header */
         justify-content: center;
+        right: -100%;
+        top: 70px;
+        gap: 0rem;
+        flex-direction: column;
+        width: 100%;
         align-items: center;
-        gap: 2rem;
         transition: right 0.3s ease;
+
+        /* 
+        height: calc(100vh - 60px); */
+        /* Full screen minus header */
     }
 
-    .nav-links.active {
+    .nav-menu.active {
         right: 0;
+        background-color: var(--background-color);
         /* Slide in */
     }
 
-    .menu-toggle {
+
+    /* hamburguer menu*/
+    .hamburguer {
         display: block;
         /* Show on smaller screens */
     }
 
+    .hamburguer.active .bar:nth-child(2)
+    {
+        opacity: 0;
+    }
+    .hamburguer.active .bar:nth-child(1)
+    {
+        transform: translateY(8px) rotate(45deg);
+        background-color:  var(--primary-color);
+    }
+    .hamburguer.active .bar:nth-child(3)
+    {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--primary-color);
+    }
 
-    .cta-buttons {
+    .hamburguer.ac .cta-buttons {
         flex-direction: column;
         /* Stack buttons vertically */
         align-items: center;

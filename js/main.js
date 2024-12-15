@@ -1,6 +1,6 @@
 // Select necessary elements
-const hamburger = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-links");
+const hamburger = document.querySelector(".hamburguer");
+const navMenu = document.querySelector(".nav-menu");
 
 // Toggle menu visibility on hamburger click
 hamburger.addEventListener("click", toggleMenu);
