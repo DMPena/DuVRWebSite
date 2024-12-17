@@ -11,6 +11,14 @@
     <link rel="stylesheet" type='text/css' href="css/components/footer.css">
     <link rel="stylesheet" type='text/css' href="css/components/buttons.css">
     <link rel="stylesheet" type='text/css' href="css/components/responsive.css">
+
+    <script>
+
+    </script>
+
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeoaJ0qAAAAAPH3jQ21yPRD-dCWaope3CCwHjPU"></script>
+
 </head>
 
 <body>
@@ -34,19 +42,16 @@
             </div>
         </nav>
     </header>
-
     <main>
         <section class="contact-hero">
             <div class="container">
-                <h1>Contact Us</h1>
+                <h2>Contact Us</h2>
                 <p>We'd love to hear from you! Please fill out the form below or reach out using the contact information
                     provided.</p>
             </div>
-
-
             <section class="contact-form">
-                <div class="container">
-                    <form action="#" method="post">
+                <!-- <div class="container">
+                    <form action="contact_form.php" method="post">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -62,12 +67,14 @@
                             <textarea id="message" name="message" rows="3" required></textarea>
                         </div>
                         <div class="submit-btn">
-                            <button type="submit">Send Message</button>
+                            <button type="submit" button class="g-recaptcha"
+                                data-sitekey="6LeoaJ0qAAAAAPH3jQ21yPRD-dCWaope3CCwHjPU" data-callback='onSubmit'
+                                data-action='submit'>>Send Message</button>
                         </div>
 
                     </form>
-                </div>
-                <section class="contact-info">
+                </div> -->
+                <section class="contact-details">
                     <div class="container">
                         <h2>Our Contact Information</h2>
                         <address>
@@ -85,18 +92,49 @@
     <footer>
         <p>© 2024 VR Developer Portfolio. All Rights Reserved.</p>
         <ul class="social-links">
-            <a href="https://www.linkedin.com/in/duarte-mota-vrdev">LinkedIn</a></li>
-            <a href="https://www.youtube.com/@Du-VR">Youtube</a></li>
-            <a href="https://www.instagram.com/duvr_hub">Instagram</a></li>
-            <a href="https://www.tiktok.com/@du_vr">TikTok</a></li>
-            <a href="https://github.com/DMPena">GitHub</a></li>
-            <a href="https://x.com/Duarte_Mota22">Twitter</a></li>
-            <a href="https://pt.pinterest.com/du_vr/">Pinterest</a></li>
+
+            <!-- linkedin -->
+            <a href="https://www.linkedin.com/in/duarte-mota-vrdev" target="_blank">
+                <img src="./images/icons/linkedin_social_icon.png" alt="LinkedIn">
+            </a></li>
+
+            <!-- youtube -->
+            <a href="https://www.youtube.com/@Du-VR" target="_blank">
+                <img src="./images/icons/youtube_social media_icon.png" alt="Youtube">
+            </a></li>
+
+            <!-- instagram -->
+            <a href="https://www.instagram.com/duvr_hub" target="_blank">
+                <img src="./images/icons/instagram_social media_icon.png" alt="Instagram">
+            </a></li>
+
+            <!-- tiktok -->
+            <a href="https://www.tiktok.com/@du_vr" target="_blank">
+                <img src="./images/icons/tiktok_social media_icon.png" alt="TikTok">
+            </a></li>
+
+            <!-- github -->
+            <a href="https://github.com/DMPena" target="_blank">
+                <img src="./images/icons/github_social_icon_blue.png" alt="GitHub">
+            </a></li>
+
+            <!-- X Twitter -->
+
+            </a>
+            <a href="https://x.com/Duarte_Mota22" target="_blank">
+                <img src="./images/icons/blue_letter_lowercase_x_icon.svg" alt="X">
+            </a></li>
+            <!-- Pinterest -->
+            <a href="https://pt.pinterest.com/du_vr" target="_blank">
+                <img src="./images/icons/pinterest_social media_icon.png" alt="Pinterest">
+            </a></li>
         </ul>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/recaptcha.js"></script>
     <script src="js/particles.js-master/particles.min.js"></script>
 
 </body>
+
 </html>

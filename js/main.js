@@ -20,6 +20,18 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 
+
+
+// Assuming you have a success message div with id "success-message"
+document.getElementById("success-message").innerHTML = "Message sent successfully!";
+
+function showMessage(message, isError) {
+    const messageDiv = document.getElementById("message-div");
+    messageDiv.textContent = message;
+    messageDiv.style.color = isError ? "red" : "green";
+}
+
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
