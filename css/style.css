@@ -1,18 +1,41 @@
 /* Base Styles */
 body {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
+    /* Stack elements vertically */
     min-height: 100vh;
     font-family: 'Robot', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #fffefe, #00d8ff);
-    color: var(--secondary-color);
+    background: var(--background-color);
+    color: var(--text-color);
     overflow-x: hidden;
     /* Use with caution */
     margin: 0;
     /* Reset margin on body */
     /* background: linear-gradient(to bottom, #121212, #00d8ff); */
 }
+
+a {
+    color: #64b5f6;
+}
+
+a:hover {
+    color: #bbdefb;
+}
+
+p {
+    margin-bottom: 1rem;
+    /* Add spacing between paragraphs */
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
 
 /* Layout: Header */
 header {
@@ -38,6 +61,14 @@ header {
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 1px;
+    padding-right: 10%;
+}
+
+.logo:hover {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 1px;
 }
 
 
@@ -49,6 +80,7 @@ header {
     cursor: pointer;
     margin-left: 1rem;
     transition: transform 0.3s ease;
+
 }
 
 .theme-toggle:hover {
@@ -90,23 +122,11 @@ main {
     /* Slightly dim the video */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Add a dark overlay */
-    z-index: -1;
-    /* Ensure it stays below the text */
-}
-
-.hero-content {
+/*
+ .hero-content {
     z-index: 2;
     color: var(--secondary-color);
-}
+} */
 
 .hero h1 {
     font-size: 3rem;
@@ -131,6 +151,7 @@ main {
 #services {
     text-align: center;
     padding: 2rem;
+    /* background: linear-gradient(0deg, var(--background-color), var(--primary-color)); */
     /* Added padding for spacing */
 }
 
@@ -150,7 +171,7 @@ main {
     border: 0;
 }
 
-.contact-hero{
+.contact-hero {
     position: relative;
     /* min-height: 100vh; */
     display: flex;
@@ -162,23 +183,44 @@ main {
     overflow: hidden;
 }
 
-.contact-form{
+.contact-form {
     display: flex;
     text-align: left;
     padding: 1rem;
 }
 
-.form-group{
+.form-group {
     padding: 1rem;
 }
 
-.contact-info{
+.contact-info {
     padding: 1rem;
 }
 
-.submit-btn{
+.submit-btn {
     text-align: right;
     padding: 0rem 1rem;
 
 }
 
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-links svg {
+    /* Target inline SVGs */
+    width: 30px;
+    height: 30px;
+}
+
+.social-links img {
+    /* Target SVGs using <img> tag */
+    width: 30px;
+    height: 30px;
+}
+
+.social-links a:hover svg {
+    fill: #007bff;
+    /* Change color on hover */
+}
