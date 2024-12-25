@@ -2,7 +2,16 @@ exports.handler = async (event, context) => {
     const fetch = (await import('node-fetch')).default;
 
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-    const { 'g-recaptcha-response': token } = JSON.parse(event.body);
+    let body;
+
+    // Check if event.body is a string and parse it if necessary
+    if (typeof event.body === 'string') {
+        body = JSON.parse(event.body);
+    } else {
+        body = event.body;
+    }
+
+    const token = body['g-recaptcha-response'];
 
     const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
     const response = await fetch(verificationUrl, { method: 'POST' });
