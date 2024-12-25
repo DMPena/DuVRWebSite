@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
-
 exports.handler = async (event, context) => {
+    const fetch = (await import('node-fetch')).default;
+
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     const { 'g-recaptcha-response': token } = JSON.parse(event.body);
 
