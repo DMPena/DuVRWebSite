@@ -4,11 +4,18 @@ exports.handler = async (event, context) => {
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
     let body;
 
-    // Check if event.body is a string and parse it if necessary
-    if (typeof event.body === 'string') {
-        body = JSON.parse(event.body);
-    } else {
-        body = event.body;
+    try {
+        // Check if event.body is a string and parse it if necessary
+        if (typeof event.body === 'string') {
+            body = JSON.parse(event.body);
+        } else {
+            body = event.body;
+        }
+    } catch (error) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: 'Invalid JSON' }),
+        };
     }
 
     const token = body['g-recaptcha-response'];
