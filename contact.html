@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuVR - Contact</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" type='text/css' href="css/style.css">
     <link rel="stylesheet" type='text/css' href="css/components/colors.css">
     <link rel="stylesheet" type='text/css' href="css/components/navbar.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type='text/css' href="css/components/buttons.css">
     <link rel="stylesheet" type='text/css' href="css/components/responsive.css">
 
-    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -45,7 +45,7 @@
                     provided.</p>
             </div>
             <section class="contact-form">
-                <form name="contact" action="contact_form.php" method="post" data-netlify="true"
+                <form name="contact" action="/.netlify/functions/validate-form" method="post" data-netlify="true"
                     data-netlify-recaptcha="true">
                     <div class="form-group">
                         <label for="name">Name:</label>
@@ -62,7 +62,8 @@
                         <textarea id="message" name="message" rows="3" required></textarea>
                     </div>
 
-                    <div class="g-recaptcha" data-sitekey="${RECAPTCHA_SITE_KEY}"></div>
+                    <div class="g-recaptcha" data-sitekey="YOUR_ACTUAL_SITE_KEY"></div>
+                    6LeEsaUqAAAAAFVkhFCm9Pye29K_mbokUNoiZCUv"></div>
 
                     <div class="submit-btn">
                         <button type="submit">Send Message</button>
@@ -88,45 +89,42 @@
             <!-- linkedin -->
             <a href="https://www.linkedin.com/in/duarte-mota-vrdev" target="_blank">
                 <img src="./images/icons/linkedin_social_icon.png" alt="LinkedIn">
-            </a></li>
+            </a>
 
             <!-- youtube -->
             <a href="https://www.youtube.com/@Du-VR" target="_blank">
                 <img src="./images/icons/youtube_social media_icon.png" alt="Youtube">
-            </a></li>
+            </a>
 
             <!-- instagram -->
             <a href="https://www.instagram.com/duvr_hub" target="_blank">
                 <img src="./images/icons/instagram_social media_icon.png" alt="Instagram">
-            </a></li>
+            </a>
 
             <!-- tiktok -->
             <a href="https://www.tiktok.com/@du_vr" target="_blank">
                 <img src="./images/icons/tiktok_social media_icon.png" alt="TikTok">
-            </a></li>
+            </a>
 
             <!-- github -->
             <a href="https://github.com/DMPena" target="_blank">
                 <img src="./images/icons/github_social_icon_blue.png" alt="GitHub">
-            </a></li>
+            </a>
 
             <!-- X Twitter -->
 
             </a>
             <a href="https://x.com/Duarte_Mota22" target="_blank">
                 <img src="./images/icons/blue_letter_lowercase_x_icon.svg" alt="X">
-            </a></li>
+            </a>
             <!-- Pinterest -->
             <a href="https://pt.pinterest.com/du_vr" target="_blank">
                 <img src="./images/icons/pinterest_social media_icon.png" alt="Pinterest">
-            </a></li>
+            </a>
         </ul>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/recaptcha.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/particles.js-master/particles.min.js"></script>
 
 </body>
 
