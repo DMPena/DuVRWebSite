@@ -1,4 +1,9 @@
 <?php
+require 'vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = htmlspecialchars($_POST['name']);
   $email = htmlspecialchars($_POST['email']);
@@ -7,11 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   // Validate email
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<p>Invalid email address. Please try again.</p>";
+    echo json_encode(['success' => false, 'message' => 'Invalid email address. Please try again.']);
   } else {
     // Verifique se o token foi enviado
     if (isset($_POST['g-recaptcha-response'])) {
-      $secret = 'SITE_RECAPTCHA_SECRET'; // Substitua pela sua chave secreta do reCAPTCHA
+      $secret = getenv('RECAPTCHA_SECRET_KEY'); // Substitua pela sua chave secreta do reCAPTCHA
       $response = $_POST['g-recaptcha-response'];
 
       // Verifique o token com o Google reCAPTCHA
@@ -43,18 +48,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $headers = "From: $email";
 
         if (mail($to, $subject, $message, $headers)) {
-            echo "<script>showMessage('Message sent successfully!', false);</script>";
+          echo json_encode(['success' => true, 'message' => 'Message sent successfully!']);
         } else {
-            echo "<script>showMessage('Message could not be sent. Please try again later.', true);</script>";
+          echo json_encode(['success' => false, 'message' => 'Message could not be sent. Please try again later.']);
         }
       } else {
-        // O token é inválido, exiba uma mensagem de erro
-        echo "Você não é um robô!";
+        echo json_encode(['success' => false, 'message' => 'reCAPTCHA verification failed. Please try again.']);
       }
     } else {
-      // O token não foi enviado
-      echo "Erro: Token não encontrado.";
+      echo json_encode(['success' => false, 'message' => 'reCAPTCHA response not found.']);
     }
   }
+} else {
+  echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
 }
 ?>
