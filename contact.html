@@ -12,7 +12,7 @@
     <link rel="stylesheet" type='text/css' href="css/components/buttons.css">
     <link rel="stylesheet" type='text/css' href="css/components/responsive.css">
 
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=SITE_RECAPTCHA_KEY" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 
 </head>
 
@@ -45,7 +45,7 @@
                     provided.</p>
             </div>
             <section class="contact-form"> 
-                    <form id="contact-form"action="contact_form.php" method="post" data-netlify="true">
+                    <form name="contact" action="contact_form.php" method="post" data-netlify="true">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -62,7 +62,7 @@
                         </div>
                         <div class="submit-btn">
                             <button type="submit" class="g-recaptcha"
-                                data-sitekey="SITE_RECAPTCHA_KEY" data-callback='onSubmit'
+                                data-sitekey="6LeEsaUqAAAAAFVkhFCm9Pye29K_mbokUNoiZCUv" data-callback='onSubmit'
                                 data-action='submit'>Send Message</button>
                         </div>
 

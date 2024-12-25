@@ -183,7 +183,7 @@ main {
     overflow: hidden;
 }
 
-.contact-form {
+.contact {
     display: flex;
     text-align: left;
     padding: 1rem;
@@ -200,6 +200,8 @@ main {
 .submit-btn {
     text-align: right;
     padding: 0rem 1rem;
+    justify-content: center;
+    align-items: center;
 
 }
 
