@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuVR - Contact</title>
+    <link rel="stylesheet" type='text/css' href="css/style.css">
+    <link rel="stylesheet" type='text/css' href="css/components/colors.css">
+    <link rel="stylesheet" type='text/css' href="css/components/navbar.css">
+    <link rel="stylesheet" type='text/css' href="css/components/footer.css">
+    <link rel="stylesheet" type='text/css' href="css/components/buttons.css">
+    <link rel="stylesheet" type='text/css' href="css/components/responsive.css">
+
+    <script>
+
+    </script>
+
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6Lc9i6UqAAAAAM1w8X2Xsa27KyTvItKNcIMhmyug"></script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">DuVR</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-links">Home</a></li>
+                <li><a href="news.html" class="nav-links">News</a></li>
+                <li><a href="portfolio.html" class="nav-links">Portfolio</a></li>
+                <li><a href="index.html#services" class="nav-links">Services</a></li>
+                <li><a href="blog.html" class="nav-links">Blog</a></li>
+                <li><a href="contact.html" class="nav-links">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">🌙</div>
+            <div class="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Please fill out the form below or reach out using the contact information
+                    provided.</p>
+            </div>
+            <section class="contact-form"> 
+                    <form id="contact-form"action="contact_form.php" method="post" data-netlify="true">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="3" required></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="g-recaptcha"
+                                data-sitekey="SITE_RECAPTCHA_KEY" data-callback='onSubmit'
+                                data-action='submit'>Send Message</button>
+                        </div>
+
+                    </form>
+                </section>
+                <section class="contact-details">
+                        <h2>Our Contact Information</h2>
+                        <address>
+                            <p><strong>Phone:</strong> +351914217961</p>
+                            <p><strong>Email:</strong> dmpena22@gmail.com</p>
+                        </address>
+                </section>
+        </section>
+
+
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 VR Developer Portfolio. All Rights Reserved.</p>
+        <ul class="social-links">
+
+            <!-- linkedin -->
+            <a href="https://www.linkedin.com/in/duarte-mota-vrdev" target="_blank">
+                <img src="./images/icons/linkedin_social_icon.png" alt="LinkedIn">
+            </a></li>
+
+            <!-- youtube -->
+            <a href="https://www.youtube.com/@Du-VR" target="_blank">
+                <img src="./images/icons/youtube_social media_icon.png" alt="Youtube">
+            </a></li>
+
+            <!-- instagram -->
+            <a href="https://www.instagram.com/duvr_hub" target="_blank">
+                <img src="./images/icons/instagram_social media_icon.png" alt="Instagram">
+            </a></li>
+
+            <!-- tiktok -->
+            <a href="https://www.tiktok.com/@du_vr" target="_blank">
+                <img src="./images/icons/tiktok_social media_icon.png" alt="TikTok">
+            </a></li>
+
+            <!-- github -->
+            <a href="https://github.com/DMPena" target="_blank">
+                <img src="./images/icons/github_social_icon_blue.png" alt="GitHub">
+            </a></li>
+
+            <!-- X Twitter -->
+
+            </a>
+            <a href="https://x.com/Duarte_Mota22" target="_blank">
+                <img src="./images/icons/blue_letter_lowercase_x_icon.svg" alt="X">
+            </a></li>
+            <!-- Pinterest -->
+            <a href="https://pt.pinterest.com/du_vr" target="_blank">
+                <img src="./images/icons/pinterest_social media_icon.png" alt="Pinterest">
+            </a></li>
+        </ul>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/recaptcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/particles.js-master/particles.min.js"></script>
+
+</body>
+
+</html>
