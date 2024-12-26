@@ -1,7 +1,22 @@
-exports.handler = async (event, context) => {
-    const fetch = (await import('node-fetch')).default;
+import fetch from 'node-fetch';
+
+/**
+ * Handles the form validation and reCAPTCHA verification.
+ * 
+ * @param {Object} event - The event object containing the request data.
+ * @returns {Object} - The response object with status code and message.
+ */
+export const handler = async (event) => {
 
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+
+    if (!secretKey) {
+        console.error('RECAPTCHA_SECRET_KEY is not set');
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Server configuration error' }),
+        };
+    }
     let body;
 
     try {
@@ -14,32 +29,49 @@ exports.handler = async (event, context) => {
         } else if (typeof event.body === 'object') {
             body = event.body;
         } else {
-            throw new Error('Invalid JSON input');
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'Invalid JSON input' }),
+            };
         }
+        if (!body.token) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'reCAPTCHA token is missing' }),
+            };
+        }
+
+        const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${body.token}`;
+
+        let verification;
+        try {
+            const response = await fetch(verificationUrl, { method: 'POST' });
+            verification = await response.json();
+        } catch (error) {
+            console.error('Network error:', error);
+            return {
+                statusCode: 500,
+                body: JSON.stringify({ error: 'Network error' }),
+            };
+        }
+
+        if (!verification.success) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
+            };
+        }
+
+        // Process form data if reCAPTCHA is successful
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ message: 'Form submitted successfully' }),
+        };
     } catch (error) {
-        console.error('JSON parsing error:', error);
+        console.error('Error parsing JSON:', error);
         return {
             statusCode: 400,
-            body: JSON.stringify({ error: 'Invalid JSON' }),
+            body: JSON.stringify({ error: 'Invalid JSON input' }),
         };
     }
-
-    const token = body['g-recaptcha-response'];
-
-    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
-    const response = await fetch(verificationUrl, { method: 'POST' });
-    const verification = await response.json();
-
-    if (!verification.success) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
-        };
-    }
-
-    // Process form data if reCAPTCHA is successful
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'Form submitted successfully' }),
-    };
 };
