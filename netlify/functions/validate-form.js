@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
  * @param {Object} event - The event object containing the request data.
  * @returns {Object} - The response object with status code and message.
  */
-export const handler = async (event) => {
+exports.handler = async (event, context) => {
 
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
@@ -29,49 +29,32 @@ export const handler = async (event) => {
         } else if (typeof event.body === 'object') {
             body = event.body;
         } else {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'Invalid JSON input' }),
-            };
+            throw new Error('Invalid JSON input');
         }
-        if (!body.token) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'reCAPTCHA token is missing' }),
-            };
-        }
-
-        const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${body.token}`;
-
-        let verification;
-        try {
-            const response = await fetch(verificationUrl, { method: 'POST' });
-            verification = await response.json();
-        } catch (error) {
-            console.error('Network error:', error);
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ error: 'Network error' }),
-            };
-        }
-
-        if (!verification.success) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
-            };
-        }
-
-        // Process form data if reCAPTCHA is successful
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: 'Form submitted successfully' }),
-        };
     } catch (error) {
-        console.error('Error parsing JSON:', error);
+        console.error('JSON parsing error:', error);
         return {
             statusCode: 400,
-            body: JSON.stringify({ error: 'Invalid JSON input' }),
+            body: JSON.stringify({ error: 'Invalid JSON' }),
         };
     }
+
+    const token = body['g-recaptcha-response'];
+
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
+    const response = await fetch(verificationUrl, { method: 'POST' });
+    const verification = await response.json();
+
+    if (!verification.success) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
+        };
+    }
+
+    // Process form data if reCAPTCHA is successful
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ message: 'Form submitted successfully' }),
+    };
 };
