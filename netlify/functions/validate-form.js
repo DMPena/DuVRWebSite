@@ -9,10 +9,12 @@ exports.handler = async (event, context) => {
         console.log('event.body:', event.body);
 
         // Check if event.body is a string and parse it if necessary
-        if (typeof event.body === 'string') {
+        if (typeof event.body === 'string' && event.body.trim() !== '') {
             body = JSON.parse(event.body);
-        } else {
+        } else if (typeof event.body === 'object') {
             body = event.body;
+        } else {
+            throw new Error('Invalid JSON input');
         }
     } catch (error) {
         console.error('JSON parsing error:', error);
