@@ -5,6 +5,9 @@ exports.handler = async (event, context) => {
     let body;
 
     try {
+        // Log the event.body to inspect its content
+        console.log('event.body:', event.body);
+
         // Check if event.body is a string and parse it if necessary
         if (typeof event.body === 'string') {
             body = JSON.parse(event.body);
@@ -12,6 +15,7 @@ exports.handler = async (event, context) => {
             body = event.body;
         }
     } catch (error) {
+        console.error('JSON parsing error:', error);
         return {
             statusCode: 400,
             body: JSON.stringify({ error: 'Invalid JSON' }),
