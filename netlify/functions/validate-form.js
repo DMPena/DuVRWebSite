@@ -7,7 +7,6 @@ import fetch from 'node-fetch';
  * @returns {Object} - The response object with status code and message.
  */
 exports.handler = async (event, context) => {
-
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
     if (!secretKey) {
@@ -17,6 +16,7 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ error: 'Server configuration error' }),
         };
     }
+
     let body;
 
     try {
@@ -41,20 +41,28 @@ exports.handler = async (event, context) => {
 
     const token = body['g-recaptcha-response'];
 
-    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
-    const response = await fetch(verificationUrl, { method: 'POST' });
-    const verification = await response.json();
+    try {
+        const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
+        const response = await fetch(verificationUrl, { method: 'POST' });
+        const verification = await response.json();
 
-    if (!verification.success) {
+        if (!verification.success) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
+            };
+        }
+
+        // Process form data if reCAPTCHA is successful
         return {
-            statusCode: 400,
-            body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
+            statusCode: 200,
+            body: JSON.stringify({ message: 'Form submitted successfully' }),
+        };
+    } catch (error) {
+        console.error('Error during reCAPTCHA verification:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Server error during reCAPTCHA verification' }),
         };
     }
-
-    // Process form data if reCAPTCHA is successful
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'Form submitted successfully' }),
-    };
 };

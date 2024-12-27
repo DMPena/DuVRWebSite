@@ -10,3 +10,5 @@ bfg-1.14.0.jar
 
 node_modules/
 .env
+# Local Netlify folder
+.netlify
