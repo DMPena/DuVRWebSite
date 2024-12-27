@@ -1,4 +1,4 @@
-exports.handler = async (event, context) => {
+module.exports.handler = async (event, context) => {
   // Verify HTTP method
   if (event.httpMethod !== 'POST') {
       return {
@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
       };
   }
 
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const secretKey = process.env.SITE_RECAPTCHA_SECRET;
 
   if (!secretKey) {
       console.error('RECAPTCHA_SECRET_KEY is not set');
@@ -23,19 +23,17 @@ exports.handler = async (event, context) => {
       // Log the event.body to inspect its content
       console.log('event.body:', event.body);
 
-      // Check if event.body is a string and parse it if necessary
-      if (typeof event.body === 'string' && event.body.trim() !== '') {
-          body = JSON.parse(event.body);
-      } else if (typeof event.body === 'object') {
-          body = event.body;
-      } else {
-          throw new Error('Invalid JSON input');
-      }
+      // Parse URL-encoded form data
+      const formData = new URLSearchParams(event.body);
+      body = Object.fromEntries(formData.entries());
+
+      // Log the parsed body to inspect its content
+      console.log('parsed body:', body);
   } catch (error) {
-      console.error('JSON parsing error:', error);
+      console.error('Error parsing form data:', error);
       return {
           statusCode: 400,
-          body: JSON.stringify({ error: 'Invalid JSON' }),
+          body: JSON.stringify({ error: 'Invalid form data' }),
       };
   }
 
