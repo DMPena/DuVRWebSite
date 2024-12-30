@@ -2,7 +2,7 @@
 :root {
     --primary-color: #8107DA;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
     --secondary-color: #00BFFF ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
-    --terceary-color: #e1fdff; /* Off-white color */
+    --terceary-color: #F84AA7; /* Off-white color */
     
     --primary-dark: #00BFFF;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
     --secondary-dark: #8107DA ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
@@ -13,6 +13,7 @@
 
     --background-color: #f0f0f0 ; /* Softer dark background */
     --background-darkmode: #121212;
+    --background-nav-menu: #8107DA ; /* Softer dark background */
     
     --hero-text-color: #00ffff;/* RGB(0, 255, 255)  HSL(180, 100%, 50%)*/
     

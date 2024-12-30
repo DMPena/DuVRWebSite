@@ -2,17 +2,10 @@
 @media (max-width: 768px) {
 
     .navbar {
-
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        /* width: 90%;
-        max-width: 1200px;
-        
-        
-        padding: 0 1rem; */
-        /* Ensure spacing */
     }
 
     .nav-menu {
@@ -25,23 +18,23 @@
         width: 100%;
         align-items: center;
         transition: right 0.3s ease;
-
-        /* 
-        height: calc(100vh - 60px); */
-        /* Full screen minus header */
+        margin: auto;
     }
 
     .nav-menu.active {
         right: 0;
-        background-color: var(--background-color);
-        /* Slide in */
+        background-color: var(--background-nav-menu);
+    }
+    .nav-links:hover {
+
+        color: rgb(0, 0, 0);
+        background: var(--background-hover);
     }
 
 
     /* hamburguer menu*/
     .hamburguer {
         display: block;
-        /* Show on smaller screens */
     }
 
     .hamburguer.active .bar:nth-child(2)
@@ -51,12 +44,12 @@
     .hamburguer.active .bar:nth-child(1)
     {
         transform: translateY(8px) rotate(45deg);
-        background-color:  var(--primary-color);
+        background-color:  var(--secondary-color);
     }
     .hamburguer.active .bar:nth-child(3)
     {
         transform: translateY(-8px) rotate(-45deg);
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 
     .hamburguer.ac .cta-buttons {

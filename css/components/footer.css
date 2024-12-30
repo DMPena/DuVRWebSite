@@ -1,20 +1,18 @@
 /* Layout: Footer */
 footer {
     background: var(--primary-color);
-    padding: 2rem 0rem;
+    padding: 2rem 2rem;
     text-align: center;
-    border-top-left-radius: 150px;
-    border-top-right-radius: 150px;
-    max-height: 15vh;
 }
 
 footer .social-links {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 footer p {

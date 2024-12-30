@@ -9,6 +9,8 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     margin: 0;
+    padding-top: 90px;
+    box-sizing: border-box;
 }
 
 a {
@@ -25,10 +27,15 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: var(--accent-color);
+    background-image: linear-gradient(to right, var(--primary-color),var(--secondary-color),var(--terceary-color)); /* Example gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5em; /* Add some spacing below the heading */
 }
 
 
@@ -55,14 +62,10 @@ header {
     font-weight: 700;
     color: var(--secondary-color);
     letter-spacing: 1px;
-    padding-right: 10%;
 }
 
 .logo:hover {
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    letter-spacing: 1px;
+    color: var(--background-hover);
 }
 
 
@@ -85,25 +88,36 @@ header {
 
 /* Layout: Main Content */
 main {
-    margin-top: 70px;
-    flex: 1;
+    flex-grow: 1;
     width: 100%;
 }
 
 /* Components: Hero Section */
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: rem;
     overflow: hidden;
-    margin-top: 5rem;
+    
 }
 
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: justify;
+}
 .hero-video {
     position: absolute;
     top: 0;
@@ -115,50 +129,79 @@ main {
     opacity: 0.7;
 }
 
-
-.hero h1 {
-    font-size: 30px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    /* background-color:var(--background-gradient);
-    background-size: 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: animate-gradient 2.5s linear infinite; */
-}
-@keyframes animate-gradient {
-    to {
-        background-position: 200%;
-    }
+#about {
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: justify;
+.about-intro {
+    position: block;
+    top: 10%;
+    padding: 10px;
+    display: flex; /* Use flexbox for easy centering */
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    min-height: 200px; /* Ensure there's some space to see the effect */
+    text-align: center; /* Center text within elements */
 }
 
+.about-intro h1 {
+    font-size: 2.5em; /* Adjust as needed */
+}
 
+.about-intro h2 {
+    font-size: 1.2em; /* Adjust as needed */
+}
 
-/* Components: Services Section */
-#services {
+.about-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+.about-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.about-img p {
+    margin: 2rem; /* Remove default margin from the paragraph */
+}
+
+/*Services*/
+
+.services {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0rem;
+    overflow: hidden;
 }
+
+.services h1 {
+    font-size: 2.5em;
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color),var(--terceary-color), var(--secondary-color)); /* Example gradient */
+}
+
 
 .box-fiver {
     margin: 0 auto;
+    margin-top: 1rem;
     width: 80%;
     max-width: 600px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .box-fiver iframe {
@@ -167,7 +210,19 @@ main {
     border: 0;
 }
 
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0rem;
+    overflow: hidden;
+}
 .contact-hero {
+    height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
