@@ -1,12 +1,25 @@
 /* Brand Colors */
 :root {
-    --primary-color: #00d8ff;  
-    --secondary-color: #eeeeee;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
-    --background-secondary-color: #ff00ff;
-    --accent-color: #ff00ff;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
+    --primary-color: #8107DA;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
+    --secondary-color: #00BFFF ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
+    --terceary-color: #e1fdff; /* Off-white color */
+    
+    --primary-dark: #00BFFF;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
+    --secondary-dark: #8107DA ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
+    --terceary-dark: #160C28; /* Dark background color */ 
+
+    --primary-light: #00BFFF;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
+    --secondary-light: #8107DA ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
+
+    --background-color: #f0f0f0 ; /* Softer dark background */
+    --background-darkmode: #121212;
+    
     --hero-text-color: #00ffff;/* RGB(0, 255, 255)  HSL(180, 100%, 50%)*/
-    --background-color: #008080 ; /* Softer dark background */
-    --background-hover: #008080ab ; /* Softer dark background */
+    
+    --background-hover: rgb(54, 255, 242) ; /* Softer dark background */
+    --background-gradient: linear-gradient(to right, #490069, #ff00ff,#007bff,#008080); /* Gradient from primary to secondary color */
      /* --background-color: #121212;RGB(18, 18, 18)  HSL(0, 0%, 7%) */
-     --text-color: #eeeeee; /* Off-white text */
+    --text-color: #0a0a0a; /* Off-white text */
+    --text-color-dark: #eeee; /* Lighter text */
+    --accent-color: #8107DA;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
 }
