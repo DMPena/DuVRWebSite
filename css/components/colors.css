@@ -26,7 +26,10 @@
     --background-hover: #013d8f ; /* Softer dark background */
     --background-gradient: linear-gradient(to right, #490069, #ff00ff,#007bff,#008080); /* Gradient from primary to secondary color */
      /* --background-color: #121212;RGB(18, 18, 18)  HSL(0, 0%, 7%) */
-  
+    
+    --background-blog-post: #f9f9f9; /* Softer dark background */
+    --blog-post-text-color: #333333; /* Off-white text */
+    
 }
 
 /* Dark Theme */
@@ -39,5 +42,7 @@ body.dark-theme {
     --background-color: #121212;
     --background-navbar: #333333;
     --background-theme-toggle:#f0f0f0;
+    --background-blog-post: #333333; /* Softer dark background */
+    --blog-post-text-color: #ffffff; 
     
 }

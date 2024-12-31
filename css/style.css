@@ -36,7 +36,7 @@ h4 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 0.5em; /* Add some spacing below the heading */
+    margin-bottom: 0.5em; 
 }
 
 
@@ -80,6 +80,7 @@ header {
     border-radius: 50%;
     background-color: var(--background-nav-menu);
     padding: 0.3rem;
+    background-color: var(--background-theme-toggle);
 }
 
 .theme-toggle:hover {
@@ -99,8 +100,7 @@ main {
     position: relative;
     align-items: center;
     text-align: center;
-    overflow: hidden;
-    
+    overflow: hidden; 
 }
 
 
@@ -273,4 +273,89 @@ main {
 
 .social-links a:hover svg {
     fill: #007bff;
+}
+
+
+/* Blog Section */
+.blog-section {
+    padding: 2rem;
+    background-color: var(--background-);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.blog-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.blog-post {
+    background-color: var(--background-blog-post);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-post h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--blog-post-text-color);
+}
+
+.blog-post p {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: var(--blog-post-text-color);
+}
+
+.blog-post .read-more {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.blog-post .read-more:hover {
+    background-color: var(--secondary-color);
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a img {
+    width: 30px;
+    height: 30px;
 }
