@@ -1,6 +1,6 @@
 /* Layout: Footer */
 footer {
-    background: var(--primary-color);
+    background: var(--footer-color);
     padding: 2rem 2rem;
     text-align: center;
 }
