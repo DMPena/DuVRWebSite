@@ -7,6 +7,7 @@ body {
     line-height: 1.6;
     background: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
     overflow-x: hidden;
     margin: 0;
     padding-top: 90px;
@@ -31,7 +32,7 @@ h3,
 h4 {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    background-image: linear-gradient(to right, var(--primary-color),var(--secondary-color),var(--terceary-color)); /* Example gradient */
+    background-image: linear-gradient(to right, var(--primary-color),var(--secondary-color),var(--tertiary-color)); /* Example gradient */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -78,11 +79,13 @@ header {
     justify-content: center;
     transition: transform 0.3s ease;
     border-radius: 50%;
-    background-color: var(--secondary-color);
+    background-color: var(--background-nav-menu);
+    padding: 0.3rem;
 }
 
 .theme-toggle:hover {
     transform: rotate(20deg);
+    background-color: var(--background-theme-toggle);
 }
 
 
@@ -189,7 +192,7 @@ main {
 
 .services h1 {
     font-size: 2.5em;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color),var(--terceary-color), var(--secondary-color)); /* Example gradient */
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color),var(--tertiary-color), var(--secondary-color)); /* Example gradient */
 }
 
 

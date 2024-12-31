@@ -1,26 +1,43 @@
 /* Brand Colors */
 :root {
     --primary-color: #8107DA;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
-    --secondary-color: #00BFFF ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
-    --terceary-color: #F84AA7; /* Off-white color */
+    --secondary-color: #3F84E5 ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
+    --tertiary-color: #F84AA7; /* Off-white color */
     
     --primary-dark: #00BFFF;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
     --secondary-dark: #8107DA ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
-    --terceary-dark: #160C28; /* Dark background color */ 
+    --tertiary-dark: #160C28; /* Dark background color */ 
 
-    --primary-light: #00BFFF;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
+    --primary-light: #3F84E5;/* RGB(0, 191, 255)  HSL(195, 100%, 50%)*/
     --secondary-light: #8107DA ;/* RGB(255, 255, 255)  RGB(255, 255, 255)*/
 
-    --background-color: #f0f0f0 ; /* Softer dark background */
-    --background-darkmode: #121212;
-    --background-nav-menu: #8107DA ; /* Softer dark background */
-    
     --hero-text-color: #00ffff;/* RGB(0, 255, 255)  HSL(180, 100%, 50%)*/
-    
-    --background-hover: rgb(54, 255, 242) ; /* Softer dark background */
-    --background-gradient: linear-gradient(to right, #490069, #ff00ff,#007bff,#008080); /* Gradient from primary to secondary color */
-     /* --background-color: #121212;RGB(18, 18, 18)  HSL(0, 0%, 7%) */
+    --hero-text-color-hover:#013d8f;
     --text-color: #0a0a0a; /* Off-white text */
     --text-color-dark: #eeee; /* Lighter text */
     --accent-color: #8107DA;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
+
+    --footer-color: #8107DA;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
+    --background-theme-toggle: #121212;/* RGB(255, 0, 255)  RGB(255, 0, 255)*/
+    --background-color: #f0f0f0 ; /* Softer dark background */
+    --background-darkmode: #121212;
+    --background-nav-menu: #8107DA ; /* Softer dark background */
+    --background-navbar: #8107DA ; /* Softer dark background */
+    --background-hover: #013d8f ; /* Softer dark background */
+    --background-gradient: linear-gradient(to right, #490069, #ff00ff,#007bff,#008080); /* Gradient from primary to secondary color */
+     /* --background-color: #121212;RGB(18, 18, 18)  HSL(0, 0%, 7%) */
+  
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --text-color: #ffffff;
+    --background-hover: #F84AA7;
+    --footer-color: #333333;
+    --background-nav-menu: #333333;
+    --hero-text-color-hover:#F84AA7;
+    --background-color: #121212;
+    --background-navbar: #333333;
+    --background-theme-toggle:#f0f0f0;
+    
 }
