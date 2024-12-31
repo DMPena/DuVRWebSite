@@ -26,9 +26,11 @@
         background-color: var(--background-nav-menu);
     }
     .nav-links:hover {
-
-        color: rgb(0, 0, 0);
-        background: var(--background-hover);
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+        color: var(--hero-text-color-hover);
+        display: inline-block;
     }
 
 

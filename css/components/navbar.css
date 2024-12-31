@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
-    background: var(--primary-color);
+    background: var(--background-navbar);
 }
 .nav-menu {
     
@@ -31,7 +31,7 @@
     font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 30px;
     transition: color 0.3s ease, background 0.3s ease;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -42,12 +42,15 @@
     padding-right: 10%;
 }
 a.nav-links {
-    color: var(--text-color-dark);  
+    color: var(--text-color-dark);    
+    /* color: var(--text-color-dark);   */
 }
 .nav-links:hover {
-
-    color: rgb(0, 0, 0);
-    background: var(--background-hover);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    color: var(--hero-text-color-hover);
+    display: inline-block;
 }
 
 /* Mobile hamburguer Toggle */
