@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DuVR - Portfolio</title>
+    <link rel="stylesheet" type='text/css' href="css/components/portfolio.css">
     <link rel="stylesheet" type='text/css' href="css/components/colors.css">
     <link rel="stylesheet" type='text/css' href="css/style.css">
     <link rel="stylesheet" type='text/css' href="css/components/navbar.css">
@@ -36,13 +37,102 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero portfolio-hero">
+            <div class="about-intro">
+                <h1>Portfolio</h1>
+                <h2>Exploring the Boundaries of Virtual Reality</h2>
+            </div>
+        </section>
+
+        <!-- Portfolio Container -->
+        <section class="portfolio-container">
+            <div class="portfolio-filter">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="vr-training">VR Training</button>
+                    <button class="filter-btn" data-filter="games">Games</button>
+                    <button class="filter-btn" data-filter="experiences">Experiences</button>
+                </div>
+            </div>
+            
+            <div class="portfolio-grid">
+                <article class="project-card" data-category="vr-training">
+                    <div class="project-media">
+                        <video controls>
+                            <source src="./videos/VR_TowerCrane.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tower Crane Control Demo</h3>
+                        <p>Virtual reality demo project for tower crane control in a construction site, developed during my Erasmus internship at 1000 Realities.</p>
+                        <div class="tech-stack">
+                            <span>Unreal Engine</span>
+                            <span>VR</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Add more project cards -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>VR Development</h3>
+                    <ul class="skill-list">
+                        <li>Quest Development</li>
+                        <li>OpenXR Integration</li>
+                        <li>VR User Experience</li>
+                        <li>Spatial Design</li>
+                        <li>VR Optimization</li>
+                        <li>Hand Tracking</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Game Development</h3>
+                    <ul class="skill-list">
+                        <li>Unreal Engine</li>
+                        <li>Unity</li>
+                        <li>C++/C# Programming</li>
+                        <li>Blueprint Visual Scripting</li>
+                        <li>CI/CD</li>
+                        <li>Version Control (Git)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Project Management</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                        <li>Technical Documentation</li>
+                        <li>Agile Methodology</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Ready to create something amazing?</h2>
+            <a href="contact.html" class="cta-button">Let's Work Together</a>
+        </section>
+    </main>
+
+
+    <!-- Hero Section
     <section id="home" class="hero">
         <video autoplay loop muted playsinline class="hero-video">
             <source src="videos/VR_TowerCrane.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer>
@@ -87,6 +177,7 @@
         </ul>
     </footer>
     <script src="js/theme-toggle.js"></script>
+    <script src="js/portfolio-filter.js"></script>
     <script src="js/main.js"></script>
     <!-- <script src="js/particles.js-master/particles.min.js"></script> -->
 </body>
